@@ -1,0 +1,21 @@
+.header-search .ant-input-affix-wrapper {
+  transition: .25s;
+}
+
+.header-search .ant-input-affix-wrapper:hover {
+  border-color: #5B2A86;
+}
+
+.header-search .ant-input-affix-wrapper-focused {
+  border-color: #5B2A86 !important;
+  box-shadow: 0 0 0 3px rgba(91,42,134,.08);
+}
+
+.notification-btn {
+  transition: .25s;
+}
+
+.notification-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}

@@ -1,36 +1,159 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CourtClick Frontend Machine Test
 
-## Getting Started
+A responsive Order Management Dashboard built as part of the Frontend Machine Test. The application is developed using **Next.js (App Router)**, **TypeScript**, and **Ant Design**, following a reusable component-based architecture.
 
-First, run the development server:
+## 🚀 Live Demo
+
+Vercel Deployment:
+> Add your deployed Vercel URL here
+
+## 📂 GitHub Repository
+
+https://github.com/farzinmansoor/courtclick-frontend-machine-test
+
+---
+
+## 📌 Features
+
+- Responsive dashboard layout
+- Order management interface
+- Search functionality
+- Filter drawer
+- Tag management
+- Order details modal
+- Clerk assignment modal
+- Share modal
+- Pagination
+- Reusable React components
+- TypeScript support
+- Ant Design UI components
+
+---
+
+## 🛠️ Tech Stack
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Ant Design
+- CSS
+- Git & GitHub
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+├── components/
+├── data/
+├── types/
+├── styles/
+└── utils/
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/farzinmansoor/courtclick-frontend-machine-test.git
+```
+
+Move into the project directory
+
+```bash
+cd courtclick-frontend-machine-test
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and visit
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the production server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm start
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📱 Responsive Design
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application is designed to work across:
+
+- Desktop
+- Tablet
+- Mobile
+
+---
+
+## ✨ Key Components
+
+- Sidebar
+- Header
+- Dashboard
+- Orders Table
+- Pagination
+- Filter Drawer
+- View Order Modal
+- Assign Clerk Modal
+- Share Modal
+- Tag Modal
+
+---
+
+## 🎯 Machine Test Objectives Covered
+
+- ✅ Next.js App Router
+- ✅ TypeScript
+- ✅ Ant Design
+- ✅ Responsive Layout
+- ✅ Reusable Components
+- ✅ State Management
+- ✅ Modal Interactions
+- ✅ Search & Filtering
+- ✅ Clean Folder Structure
+
+---
+
+## 👨‍💻 Author
+
+**Farzin Mansoor**
+
+GitHub:
+https://github.com/farzinmansoor
+
+LinkedIn:
+(Add your LinkedIn profile URL here)
+
+---
+
+## 📄 License
+
+This project was developed solely for the **CourtClick Frontend Machine Test** as an internship assessment.

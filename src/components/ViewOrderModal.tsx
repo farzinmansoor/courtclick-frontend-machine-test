@@ -68,20 +68,9 @@ export default function ViewOrderModal({
       destroyOnClose
       width={1180}
       style={{ top: 20 }}
-      styles={{
-        content: {
-          borderRadius: 16,
-          overflow: "hidden",
-          padding: 0,
-        },
-        header: {
-          padding: "24px 28px",
-          borderBottom: "1px solid #ECECEC",
-        },
-        body: {
-          padding: "24px 28px",
-          background: "#fff",
-        },
+      bodyStyle={{
+        padding: "24px 28px",
+        background: "#fff",
       }}
       title={
         <div>
@@ -107,7 +96,6 @@ export default function ViewOrderModal({
         </div>
       }
     >
-      {/* ORDER INFORMATION */}
       <div
         style={{
           width: 520,

@@ -13,7 +13,7 @@ import AssignClerkModal from "./AssignClerkModal";
 import ViewOrderModal from "./ViewOrderModal";
 
 import { dummyOrders } from "@/data/orders";
-import { Order } from "@/types/order";
+import { Order } from "@/types/types";
 import { Clerk } from "@/data/clerks";
 
 const PAGE_SIZE = 10;

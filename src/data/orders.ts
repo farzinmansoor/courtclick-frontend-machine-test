@@ -1,4 +1,4 @@
-import { Order } from "@/types/order";
+import { Order } from "@/types/types";
 
 // Dummy data — matches the sample rows visible in the Figma file.
 // Later you can swap this for an API call; every component below

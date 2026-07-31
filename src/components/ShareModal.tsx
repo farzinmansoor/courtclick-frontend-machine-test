@@ -12,7 +12,7 @@ import {
   CopyOutlined,
   WhatsAppOutlined,
 } from "@ant-design/icons";
-import { Order } from "@/types/order";
+import { Order } from "@/types/types";
 
 const { Text } = Typography;
 

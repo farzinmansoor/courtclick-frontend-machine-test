@@ -12,7 +12,7 @@ import {
 import { CheckOutlined } from "@ant-design/icons";
 
 import { tagColorOptions } from "@/data/tags";
-import { Tag } from "@/types/order";
+import { Tag } from "@/types/types";
 
 const { Text } = Typography;
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { Tag } from "antd";
-import { OrderStatus } from "@/types/order";
+import { OrderStatus } from "@/types/types";
 
 interface StatusBadgeProps {
   status: OrderStatus;

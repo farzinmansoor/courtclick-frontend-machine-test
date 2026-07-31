@@ -17,7 +17,7 @@ import {
 } from "@ant-design/icons";
 
 import { dummyTags } from "@/data/tags";
-import { Tag } from "@/types/order";
+import { Tag } from "@/types/types";
 import CreateTagModal from "./CreateTagModal";
 
 const { Text } = Typography;

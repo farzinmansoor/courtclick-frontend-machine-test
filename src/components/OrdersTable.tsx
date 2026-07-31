@@ -5,7 +5,7 @@ import { Table, Button, Space, Tag as AntTag, Avatar } from "antd";
 import { FilterOutlined } from "@ant-design/icons";
 import type { ColumnsType } from "antd/es/table";
 
-import { Order } from "@/types/order";
+import { Order } from "@/types/types";
 import StatusBadge from "./StatusBadge";
 import CheckboxFilterPopover from "./CheckboxFilterPopover";
 import { dummyTags } from "@/data/tags";

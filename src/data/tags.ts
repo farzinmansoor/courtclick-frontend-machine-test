@@ -1,4 +1,4 @@
-import { Tag } from "@/types/order";
+import { Tag } from "@/types/types";
 
 // Matches the tag list visible in the Figma "Choose Tag" panel.
 export const dummyTags: Tag[] = [

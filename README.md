@@ -2,11 +2,11 @@
 
 A modern and responsive frontend application developed as part of the **CourtClick Frontend Machine Test**.
 
-The application is built using **Next.js**, **TypeScript**, and **Ant Design**, following the provided Figma design as closely as possible while maintaining clean, reusable, and scalable code.
+The application is built using **Next.js**, **TypeScript**, and **Ant Design**, following the provided Figma design while maintaining clean, reusable, and scalable code.
 
 ---
 
-## 🚀 Live Demo
+# 🚀 Live Demo
 
 **Vercel Deployment**
 
@@ -14,7 +14,7 @@ https://courtclick-frontend-machine-test.vercel.app
 
 ---
 
-## 📂 GitHub Repository
+# 📂 GitHub Repository
 
 https://github.com/farzinmansoor/courtclick-frontend-machine-test
 
@@ -24,37 +24,79 @@ https://github.com/farzinmansoor/courtclick-frontend-machine-test
 
 ## Dashboard
 
-![Dashboard](public/images/dashboard.png)
+![Dashboard](images/dashboard.png)
 
 ---
 
-## Order Details Modal
+## Orders Table
 
-![Order Details](public/images/order-details.png)
+![Orders Table](images/orders-table.png)
 
 ---
 
-## Choose Tag Modal
+## Order Details
 
-![Choose Tag](public/images/tag-modal.png)
+![Order Details](images/order-details.png)
+
+---
+
+## View Order Modal
+
+![View Order Modal](images/view-order-modal.png)
+
+---
+
+## Assign Clerk Modal
+
+![Assign Clerk Modal](images/assign-clerk-modal.png)
+
+---
+
+## Add Clerk Modal
+
+![Add Clerk Modal](images/Add-clerk.png)
+
+---
+
+## Edit Tag Modal
+
+![Edit Tag Modal](images/edit-tag-modal.png)
 
 ---
 
 ## Create Tag Modal
 
-![Create Tag](public/images/create-tag.png)
+![Create Tag Modal](images/create-tag-modal.png)
 
 ---
 
-## ✨ Features
+## Filter Drawer
+
+![Filter Drawer](images/filter-drawer.png)
+
+---
+
+## Share Modal
+
+![Share Modal](images/share-modal.png)
+
+---
+
+## Search Feature
+
+![Search Feature](images/search-feature.png)
+
+---
+
+# ✨ Features
 
 - Pixel Perfect UI based on Figma
 - Responsive Layout
-- Next.js App Router
-- TypeScript
+- Built with Next.js App Router
+- TypeScript Support
 - Ant Design Components
 - Search Orders
-- Order Table
+- Orders Management Table
 - Status Badges
 - Clerk Assignment
 - Order Details Modal
@@ -62,8 +104,8 @@ https://github.com/farzinmansoor/courtclick-frontend-machine-test
 - Create Tag
 - Edit Tag
 - Delete Tag
-- Share Popup
-- Filter Components
+- Share Modal
+- Filter Drawer
 - Reusable Components
 - Clean Folder Structure
 
@@ -82,22 +124,18 @@ https://github.com/farzinmansoor/courtclick-frontend-machine-test
 
 # 📁 Folder Structure
 
-```
-src
-│
-├── app
-│
-├── components
-│
-├── data
-│
-├── types
-│
-└── styles
-
-public
-│
-└── images
+```text
+.
+├── images
+├── public
+├── src
+│   ├── app
+│   ├── components
+│   ├── data
+│   ├── types
+│   └── styles
+├── package.json
+└── README.md
 ```
 
 ---
@@ -110,7 +148,7 @@ Clone the repository
 git clone https://github.com/farzinmansoor/courtclick-frontend-machine-test.git
 ```
 
-Move into project
+Move into the project
 
 ```bash
 cd courtclick-frontend-machine-test
@@ -122,13 +160,13 @@ Install dependencies
 npm install
 ```
 
-Run development server
+Run the development server
 
 ```bash
 npm run dev
 ```
 
-Open
+Open your browser
 
 ```
 http://localhost:3000
@@ -138,11 +176,13 @@ http://localhost:3000
 
 # 📦 Production Build
 
+Create a production build
+
 ```bash
 npm run build
 ```
 
-Run production
+Run production server
 
 ```bash
 npm start
@@ -154,45 +194,48 @@ npm start
 
 - Dashboard
 - Orders Table
-- Search Bar
-- Filters
-- Status Badge
-- Assign Clerk
-- View Order Modal
+- Search Functionality
+- Filter Drawer
+- Clerk Assignment
+- Order Details Modal
 - Tag Management
-- Create Tag
-- Edit Tag
-- Delete Tag
+- Create Tag Modal
+- Edit Tag Modal
 - Share Modal
+- Responsive Layout
 
 ---
 
-# 📸 Images Required
+# 📸 Project Images
 
-Create this folder
-
-```
-public/images
-```
-
-Place these files inside
+All screenshots used in this README are stored inside the **images/** folder.
 
 ```
-dashboard.png
-order-details.png
-tag-modal.png
-create-tag.png
+images/
+├── dashboard.png
+├── orders-table.png
+├── order-details.png
+├── view-order-modal.png
+├── assign-clerk-modal.png
+├── Add-clerk.png
+├── edit-tag-modal.png
+├── create-tag-modal.png
+├── filter-drawer.png
+├── share-modal.png
+└── search-feature.png
 ```
 
 ---
 
 # 🎯 Project Highlights
 
-- Fully Component Based
-- Reusable UI Components
-- Strong TypeScript Typing
+- Pixel Perfect UI
 - Responsive Design
-- Clean Project Structure
+- Component-Based Architecture
+- Reusable Components
+- Clean Code Structure
+- TypeScript Support
+- Ant Design UI
 - Easy to Maintain
 - Production Ready
 
@@ -204,11 +247,11 @@ create-tag.png
 
 Computer Science and Engineering Student
 
-GitHub
+### GitHub
 
 https://github.com/farzinmansoor
 
-LinkedIn
+### LinkedIn
 
 https://www.linkedin.com/in/farzin-mansoor-8045b3361/
 
@@ -216,4 +259,4 @@ https://www.linkedin.com/in/farzin-mansoor-8045b3361/
 
 # 📄 License
 
-This project was developed for the **CourtClick Frontend Machine Test**.
+This project was developed for the **CourtClick Frontend Machine Test** as a frontend implementation based on the provided Figma design.

@@ -210,7 +210,7 @@ https://github.com/farzinmansoor
 
 LinkedIn
 
-https://www.linkedin.com/in/farzinmansoor/
+https://www.linkedin.com/in/farzin-mansoor-8045b3361/
 
 ---
 

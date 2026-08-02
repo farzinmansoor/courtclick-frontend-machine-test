@@ -2,7 +2,14 @@
 // Defining these up front means every component that touches order data
 // gets autocomplete + error-checking instead of guessing field names.
 
-export type OrderStatus = "cancelled" | "order placed" | "payment completed";
+export type OrderStatus =
+  | "cancelled"
+  | "order placed"
+  | "payment completed"
+  | "assigned"
+  | "applied"
+  | "dispatched"
+  | "delivered";
 
 export interface Tag {
   id: string;
@@ -75,7 +82,7 @@ export interface Order {
   statusNote?: string; // e.g. "03 days since payment"
   status: OrderStatus;
   tags: Tag[];
-  clerk?: string; // if unassigned, leave undefined -> show "Assign" button
+  assignedDate?: string; // if unassigned, leave undefined -> show "Assign" button
   // Used by the Share popup — optional because not every screen needs them
   caseNumber?: string;
   caseName?: string;

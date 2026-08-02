@@ -32,14 +32,32 @@ export default function TagModal({
   onClose,
 }: TagModalProps) {
   const [tags, setTags] = useState<Tag[]>(dummyTags);
+
   const [createOpen, setCreateOpen] = useState(false);
 
-  const deleteTag = (id: string) => {
-    setTags((prev) => prev.filter((tag) => tag.id !== id));
-  };
+  const [editTag, setEditTag] = useState<Tag | null>(null);
 
   const createTag = (tag: Tag) => {
     setTags((prev) => [...prev, tag]);
+  };
+
+  const updateTag = (updatedTag: Tag) => {
+    setTags((prev) =>
+      prev.map((tag) =>
+        tag.id === updatedTag.id ? updatedTag : tag
+      )
+    );
+  };
+
+  const deleteTag = (id: string) => {
+    setTags((prev) =>
+      prev.filter((tag) => tag.id !== id)
+    );
+  };
+
+  const editSelectedTag = (tag: Tag) => {
+    setEditTag(tag);
+    setCreateOpen(true);
   };
 
   return (
@@ -49,15 +67,14 @@ export default function TagModal({
         centered
         width={650}
         destroyOnClose
-        onCancel={onClose}
         footer={null}
+        onCancel={onClose}
         title={
           <div>
             <div
               style={{
                 fontSize: 22,
                 fontWeight: 700,
-                color: "#222",
               }}
             >
               Choose Tag
@@ -81,36 +98,26 @@ export default function TagModal({
             justifyContent: "space-between",
             alignItems: "center",
             marginBottom: 24,
-            marginTop: 8,
           }}
         >
-          <Text
-            strong
-            style={{
-              fontSize: 16,
-            }}
-          >
-            Available Tags
-          </Text>
+          <Text strong>Available Tags</Text>
 
           <Button
             type="primary"
             icon={<PlusOutlined />}
-            onClick={() => setCreateOpen(true)}
+            onClick={() => {
+              setEditTag(null);
+              setCreateOpen(true);
+            }}
             style={{
               background: "#5A1746",
               borderColor: "#5A1746",
-              borderRadius: 8,
-              height: 40,
-              fontWeight: 600,
-              paddingInline: 20,
             }}
           >
             Create Tag
           </Button>
         </div>
-
-        <div
+                <div
           style={{
             maxHeight: 430,
             overflowY: "auto",
@@ -137,29 +144,27 @@ export default function TagModal({
                   marginBottom: 14,
                 }}
               >
-                <div>
-                  <AntTag
-                    style={{
-                      background: tag.color,
-                      border: "none",
-                      borderRadius: 16,
-                      padding: "6px 14px",
-                      fontWeight: 600,
-                      fontSize: 13,
-                      margin: 0,
-                    }}
-                  >
-                    {tag.label}
-                  </AntTag>
-                </div>
+                <AntTag
+                  style={{
+                    background: tag.color,
+                    border: "none",
+                    borderRadius: 16,
+                    padding: "6px 14px",
+                    fontWeight: 600,
+                    fontSize: 13,
+                    margin: 0,
+                  }}
+                >
+                  {tag.label}
+                </AntTag>
 
-                <Space size={18}>
+                <Space size={16}>
                   <Button
                     type="text"
                     icon={<EditOutlined />}
+                    onClick={() => editSelectedTag(tag)}
                     style={{
                       color: "#5A1746",
-                      fontSize: 18,
                     }}
                   />
 
@@ -173,9 +178,6 @@ export default function TagModal({
                       type="text"
                       danger
                       icon={<DeleteOutlined />}
-                      style={{
-                        fontSize: 18,
-                      }}
                     />
                   </Popconfirm>
                 </Space>
@@ -189,41 +191,35 @@ export default function TagModal({
             display: "flex",
             justifyContent: "flex-end",
             gap: 12,
-            marginTop: 28,
+            marginTop: 24,
           }}
         >
-          <Button
-            size="large"
-            onClick={onClose}
-            style={{
-              borderRadius: 8,
-              paddingInline: 24,
-            }}
-          >
+          <Button onClick={onClose}>
             Cancel
           </Button>
 
           <Button
-            size="large"
             type="primary"
             onClick={onClose}
             style={{
               background: "#5A1746",
               borderColor: "#5A1746",
-              borderRadius: 8,
-              paddingInline: 28,
-              fontWeight: 600,
             }}
           >
             Save Changes
           </Button>
         </div>
-      </Modal>
 
-      <CreateTagModal
+      </Modal>
+            <CreateTagModal
         open={createOpen}
-        onClose={() => setCreateOpen(false)}
+        editTag={editTag}
+        onClose={() => {
+          setCreateOpen(false);
+          setEditTag(null);
+        }}
         onCreate={createTag}
+        onUpdate={updateTag}
       />
     </>
   );

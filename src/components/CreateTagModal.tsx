@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Modal,
   Input,
@@ -20,31 +20,52 @@ interface CreateTagModalProps {
   open: boolean;
   onClose: () => void;
   onCreate: (tag: Tag) => void;
+  onUpdate?: (tag: Tag) => void;
+  editTag?: Tag | null;
 }
 
 export default function CreateTagModal({
   open,
   onClose,
   onCreate,
+  onUpdate,
+  editTag,
 }: CreateTagModalProps) {
   const [tagName, setTagName] = useState("");
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
 
-  const canCreate =
+  useEffect(() => {
+    if (open) {
+      if (editTag) {
+        setTagName(editTag.label);
+        setSelectedColor(editTag.color);
+      } else {
+        setTagName("");
+        setSelectedColor(null);
+      }
+    }
+  }, [open, editTag]);
+
+  const canSave =
     tagName.trim().length > 0 && selectedColor !== null;
 
-  const handleCreate = () => {
-    if (!canCreate || !selectedColor) return;
+  const handleSave = () => {
+    if (!canSave || !selectedColor) return;
 
-    onCreate({
-      id: `tag-${Date.now()}`,
+    const tag: Tag = {
+      id: editTag ? editTag.id : `tag-${Date.now()}`,
       label: tagName.trim(),
       color: selectedColor,
-    });
+    };
+
+    if (editTag && onUpdate) {
+      onUpdate(tag);
+    } else {
+      onCreate(tag);
+    }
 
     setTagName("");
     setSelectedColor(null);
-
     onClose();
   };
 
@@ -65,7 +86,7 @@ export default function CreateTagModal({
               color: "#222",
             }}
           >
-            Create New Tag
+            {editTag ? "Edit Tag" : "Create New Tag"}
           </div>
 
           <div
@@ -75,7 +96,9 @@ export default function CreateTagModal({
               marginTop: 4,
             }}
           >
-            Create a custom tag for organizing orders
+            {editTag
+              ? "Update your existing tag"
+              : "Create a custom tag for organizing orders"}
           </div>
         </div>
       }
@@ -96,9 +119,7 @@ export default function CreateTagModal({
           placeholder="Enter tag name"
           value={tagName}
           onChange={(e) => setTagName(e.target.value)}
-          style={{
-            borderRadius: 8,
-          }}
+          style={{ borderRadius: 8 }}
         />
       </div>
 
@@ -131,7 +152,6 @@ export default function CreateTagModal({
                   selectedColor === color
                     ? "3px solid #222"
                     : "2px solid #ECECEC",
-                transition: "0.2s",
               }}
             >
               {selectedColor === color && (
@@ -169,7 +189,7 @@ export default function CreateTagModal({
             background: "#FAFAFA",
           }}
         >
-          {canCreate ? (
+          {canSave ? (
             <AntTag
               style={{
                 background: selectedColor!,
@@ -213,8 +233,8 @@ export default function CreateTagModal({
         <Button
           size="large"
           type="primary"
-          disabled={!canCreate}
-          onClick={handleCreate}
+          disabled={!canSave}
+          onClick={handleSave}
           style={{
             background: "#5A1746",
             borderColor: "#5A1746",
@@ -223,7 +243,7 @@ export default function CreateTagModal({
             fontWeight: 600,
           }}
         >
-          Create Tag
+          {editTag ? "Save Changes" : "Create Tag"}
         </Button>
       </div>
     </Modal>

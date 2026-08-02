@@ -1,11 +1,18 @@
 # CourtClick Frontend Machine Test
 
-A responsive Order Management Dashboard built as part of the Frontend Machine Test. The application is developed using **Next.js (App Router)**, **TypeScript**, and **Ant Design**, following a reusable component-based architecture.
+A modern and responsive frontend application developed as part of the **CourtClick Frontend Machine Test**.
+
+The application is built using **Next.js**, **TypeScript**, and **Ant Design**, following the provided Figma design as closely as possible while maintaining clean, reusable, and scalable code.
+
+---
 
 ## 🚀 Live Demo
 
-Vercel Deployment:
-> Add your deployed Vercel URL here
+**Vercel Deployment**
+
+https://courtclick-frontend-machine-test.vercel.app
+
+---
 
 ## 📂 GitHub Repository
 
@@ -13,49 +20,89 @@ https://github.com/farzinmansoor/courtclick-frontend-machine-test
 
 ---
 
-## 📌 Features
+# 📸 Screenshots
 
-- Responsive dashboard layout
-- Order management interface
-- Search functionality
-- Filter drawer
-- Tag management
-- Order details modal
-- Clerk assignment modal
-- Share modal
-- Pagination
-- Reusable React components
-- TypeScript support
-- Ant Design UI components
+## Dashboard
+
+![Dashboard](public/images/dashboard.png)
 
 ---
 
-## 🛠️ Tech Stack
+## Order Details Modal
 
-- Next.js (App Router)
+![Order Details](public/images/order-details.png)
+
+---
+
+## Choose Tag Modal
+
+![Choose Tag](public/images/tag-modal.png)
+
+---
+
+## Create Tag Modal
+
+![Create Tag](public/images/create-tag.png)
+
+---
+
+## ✨ Features
+
+- Pixel Perfect UI based on Figma
+- Responsive Layout
+- Next.js App Router
+- TypeScript
+- Ant Design Components
+- Search Orders
+- Order Table
+- Status Badges
+- Clerk Assignment
+- Order Details Modal
+- Tag Management
+- Create Tag
+- Edit Tag
+- Delete Tag
+- Share Popup
+- Filter Components
+- Reusable Components
+- Clean Folder Structure
+
+---
+
+# 🛠 Tech Stack
+
+- Next.js
 - React
 - TypeScript
 - Ant Design
 - CSS
-- Git & GitHub
+- Vercel
 
 ---
 
-## 📁 Project Structure
+# 📁 Folder Structure
 
 ```
-src/
-├── app/
-├── components/
-├── data/
-├── types/
-├── styles/
-└── utils/
+src
+│
+├── app
+│
+├── components
+│
+├── data
+│
+├── types
+│
+└── styles
+
+public
+│
+└── images
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
 Clone the repository
 
@@ -63,7 +110,7 @@ Clone the repository
 git clone https://github.com/farzinmansoor/courtclick-frontend-machine-test.git
 ```
 
-Move into the project directory
+Move into project
 
 ```bash
 cd courtclick-frontend-machine-test
@@ -75,13 +122,13 @@ Install dependencies
 npm install
 ```
 
-Run the development server
+Run development server
 
 ```bash
 npm run dev
 ```
 
-Open your browser and visit
+Open
 
 ```
 http://localhost:3000
@@ -89,13 +136,13 @@ http://localhost:3000
 
 ---
 
-## 📦 Build for Production
+# 📦 Production Build
 
 ```bash
 npm run build
 ```
 
-Start the production server
+Run production
 
 ```bash
 npm start
@@ -103,57 +150,70 @@ npm start
 
 ---
 
-## 📱 Responsive Design
+# 📋 Implemented Modules
 
-The application is designed to work across:
-
-- Desktop
-- Tablet
-- Mobile
-
----
-
-## ✨ Key Components
-
-- Sidebar
-- Header
 - Dashboard
 - Orders Table
-- Pagination
-- Filter Drawer
+- Search Bar
+- Filters
+- Status Badge
+- Assign Clerk
 - View Order Modal
-- Assign Clerk Modal
+- Tag Management
+- Create Tag
+- Edit Tag
+- Delete Tag
 - Share Modal
-- Tag Modal
 
 ---
 
-## 🎯 Machine Test Objectives Covered
+# 📸 Images Required
 
-- ✅ Next.js App Router
-- ✅ TypeScript
-- ✅ Ant Design
-- ✅ Responsive Layout
-- ✅ Reusable Components
-- ✅ State Management
-- ✅ Modal Interactions
-- ✅ Search & Filtering
-- ✅ Clean Folder Structure
+Create this folder
+
+```
+public/images
+```
+
+Place these files inside
+
+```
+dashboard.png
+order-details.png
+tag-modal.png
+create-tag.png
+```
 
 ---
 
-## 👨‍💻 Author
+# 🎯 Project Highlights
+
+- Fully Component Based
+- Reusable UI Components
+- Strong TypeScript Typing
+- Responsive Design
+- Clean Project Structure
+- Easy to Maintain
+- Production Ready
+
+---
+
+# 👨‍💻 Developer
 
 **Farzin Mansoor**
 
-GitHub:
+Computer Science and Engineering Student
+
+GitHub
+
 https://github.com/farzinmansoor
 
-LinkedIn:
-(Add your LinkedIn profile URL here)
+LinkedIn
+
+https://www.linkedin.com/in/farzinmansoor/
 
 ---
 
-## 📄 License
+# 📄 License
 
-This project was developed solely for the **CourtClick Frontend Machine Test** as an internship assessment.
+This project was developed for the **CourtClick Frontend Machine Test**.

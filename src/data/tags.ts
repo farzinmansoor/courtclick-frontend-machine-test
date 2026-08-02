@@ -27,4 +27,4 @@ export const tagColorOptions = [
   "#9AA0A6",
   "#4C9A8C",
   "#5B2A86",
-];
+] as const;

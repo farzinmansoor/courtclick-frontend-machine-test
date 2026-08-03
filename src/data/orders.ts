@@ -1,8 +1,5 @@
 import { Order } from "@/types/types";
 
-// Dummy data — matches the sample rows visible in the Figma file.
-// Later you can swap this for an API call; every component below
-// only cares about receiving an Order[], not where it came from.
 export const dummyOrders: Order[] = [
   {
     id: 1,
@@ -22,7 +19,13 @@ export const dummyOrders: Order[] = [
       { id: "t3", label: "Add Case", color: "#C9BFA5" },
       { id: "t4", label: "Aadhaar Verified", color: "#E5D28A" },
     ],
-    clerk: "Shabarinath",
+    assignedDate: "3 Mar 2026",
+    clerk: {
+      id: "c1",
+      name: "Shabarinath",
+      phone: "+91 9876543210",
+      clerkId: "CLK001",
+    },
     caseNumber: "OS/300179/2024",
     caseName: "Laisamma George & Other vs State Of Kerala & Others",
     cnrNumber: "KLHC010922112023",
@@ -37,23 +40,23 @@ export const dummyOrders: Order[] = [
       delivered: "30 Mar 2026 06:03 PM",
       caseCustomer: {
         caseNumber: "OS/300179/2024",
-        legalName: "Anil philip",
-        name: "Anil philip",
+        legalName: "Anil Philip",
+        name: "Anil Philip",
         email: "anilphilipka@gmail.com",
         phone: "919495862301",
         issue: "N/A",
       },
       address: {
         pincode: "682028",
-        addressLine1: "67/67A flat no D 1st floor",
-        addressLine2: "attaniyathu road vennala",
-        city: "kochi",
-        district: "kochi",
-        state: "kerala",
+        addressLine1: "67/67A Flat No D, 1st Floor",
+        addressLine2: "Attaniyathu Road, Vennala",
+        city: "Kochi",
+        district: "Kochi",
+        state: "Kerala",
         country: "India",
       },
       product: {
-        type: "judgement",
+        type: "Judgement",
         orderDate: "7 Feb 2026",
         file: "N/A",
       },
@@ -65,6 +68,7 @@ export const dummyOrders: Order[] = [
       },
     },
   },
+
   {
     id: 2,
     userName: "Shaman",
@@ -76,33 +80,38 @@ export const dummyOrders: Order[] = [
     amount: 150,
     orderDate: "7 Feb 2026",
     orderTime: "12:57 PM",
-    statusNote: "03 days since payment",
     status: "order placed",
+    statusNote: "03 days since payment",
     tags: [
       { id: "t1", label: "Subscription Pending", color: "#8FAADC" },
       { id: "t2", label: "Gouri", color: "#A8D5BA" },
       { id: "t3", label: "Add Case", color: "#C9BFA5" },
       { id: "t4", label: "Aadhaar Verified", color: "#E5D28A" },
     ],
+    assignedDate: "",
+    clerk: null,
   },
+
   {
     id: 3,
     userName: "Gopalan",
     phone: "91 80861 65790",
-    orderRef: "OS/000850/2026",
+    orderRef: "OS/000851/2026",
     courtComplex: "District Court Thrissur",
     city: "Thrissur",
     productName: "Other — Joint Petition Filed Under Section 13B",
     amount: 2500,
     orderDate: "7 Feb 2026",
     orderTime: "12:57 PM",
-    statusNote: "11 days since payment",
     status: "payment completed",
+    statusNote: "11 days since payment",
     tags: [
       { id: "t1", label: "Subscription Pending", color: "#8FAADC" },
       { id: "t2", label: "Gouri", color: "#A8D5BA" },
       { id: "t3", label: "Add Case", color: "#C9BFA5" },
       { id: "t4", label: "Aadhaar Verified", color: "#E5D28A" },
     ],
+    assignedDate: "",
+    clerk: null,
   },
 ];

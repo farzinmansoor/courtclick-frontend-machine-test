@@ -40,6 +40,38 @@ const statusConfig: Record<
     border: "#FFE58F",
     dot: "#FAAD14",
   },
+
+  assigned: {
+    text: "Assigned",
+    color: "#0958D9",
+    background: "#E6F4FF",
+    border: "#91CAFF",
+    dot: "#1677FF",
+  },
+
+  applied: {
+    text: "Applied",
+    color: "#531DAB",
+    background: "#F9F0FF",
+    border: "#D3ADF7",
+    dot: "#722ED1",
+  },
+
+  dispatched: {
+    text: "Dispatched",
+    color: "#D46B08",
+    background: "#FFF7E6",
+    border: "#FFD591",
+    dot: "#FA8C16",
+  },
+
+  delivered: {
+    text: "Delivered",
+    color: "#389E0D",
+    background: "#F6FFED",
+    border: "#B7EB8F",
+    dot: "#52C41A",
+  },
 };
 
 export default function StatusBadge({
@@ -73,7 +105,6 @@ export default function StatusBadge({
           display: "inline-block",
         }}
       />
-
       {item.text}
     </Tag>
   );

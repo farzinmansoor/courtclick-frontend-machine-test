@@ -101,159 +101,155 @@ const Dashboard: React.FC = () => {
     const start = (currentPage - 1) * PAGE_SIZE;
     return filteredOrders.slice(start, start + PAGE_SIZE);
   }, [filteredOrders, currentPage]);
+
   return (
-  <div
-    style={{
-      background: "#F6F7FB",
-      minHeight: "100vh",
-      padding: 32,
-    }}
-  >
-    {/* Heading */}
-
-    <div style={{ marginBottom: 28 }}>
-      <h1
-        style={{
-          margin: 0,
-          fontSize: 30,
-          fontWeight: 700,
-          color: "#4E1F63",
-        }}
-      >
-        Certified True Copy
-      </h1>
-
-      <p
-        style={{
-          marginTop: 8,
-          color: "#8C8C8C",
-          fontSize: 15,
-        }}
-      >
-        Manage your Certified True Copy orders
-      </p>
-    </div>
-
-    <Card
-      bordered={false}
+    <div
       style={{
-        borderRadius: 18,
-        boxShadow: "0 4px 20px rgba(0,0,0,.05)",
-      }}
-      bodyStyle={{
-        padding: 28,
+        background: "#F6F7FB",
+        minHeight: "100vh",
+        padding: 32,
       }}
     >
-      {/* Tabs */}
+      <div style={{ marginBottom: 28 }}>
+        <h1
+          style={{
+            margin: 0,
+            fontSize: 30,
+            fontWeight: 700,
+            color: "#4E1F63",
+          }}
+        >
+          Certified True Copy
+        </h1>
 
-      <div
+        <p
+          style={{
+            marginTop: 8,
+            color: "#8C8C8C",
+            fontSize: 15,
+          }}
+        >
+          Manage your Certified True Copy orders
+        </p>
+      </div>
+
+      <Card
+        bordered={false}
         style={{
-          display: "flex",
-          gap: 12,
-          marginBottom: 28,
-          flexWrap: "wrap",
+          borderRadius: 18,
+          boxShadow: "0 4px 20px rgba(0,0,0,.05)",
+        }}
+        bodyStyle={{
+          padding: 28,
         }}
       >
-        {tabItems.map((tab) => {
-          const active = activeTab === tab.key;
+        <div
+          style={{
+            display: "flex",
+            gap: 12,
+            marginBottom: 28,
+            flexWrap: "wrap",
+          }}
+        >
+          {tabItems.map((tab) => {
+            const active = activeTab === tab.key;
 
-          return (
-            <div
-              key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
+            return (
+              <div
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                style={{
+                  padding: "10px 20px",
+                  borderRadius: 30,
+                  cursor: "pointer",
+                  background: active ? "#5A1746" : "#F5F5F5",
+                  color: active ? "#fff" : "#666",
+                  fontWeight: 600,
+                  transition: ".25s",
+                }}
+              >
+                {tab.label}
+              </div>
+            );
+          })}
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: 16,
+            flexWrap: "wrap",
+            marginBottom: 28,
+          }}
+        >
+          <Input
+            placeholder="Search by User, Phone, Case..."
+            prefix={<SearchOutlined />}
+            allowClear
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              setCurrentPage(1);
+            }}
+            style={{
+              width: 380,
+              height: 46,
+              borderRadius: 12,
+            }}
+          />
+
+          <Space wrap>
+            <Button
+              icon={<FilterOutlined />}
+              onClick={() => setFilterOpen(true)}
               style={{
-                padding: "10px 20px",
-                borderRadius: 30,
-                cursor: "pointer",
-                background: active ? "#5A1746" : "#F5F5F5",
-                color: active ? "#fff" : "#666",
+                height: 46,
+                borderRadius: 12,
+                paddingInline: 24,
                 fontWeight: 600,
-                transition: ".25s",
               }}
             >
-              {tab.label}
-            </div>
-          );
-        })}
-      </div>
+              Filter
+            </Button>
 
-      {/* Search & Actions */}
+            <Button
+              type="primary"
+              icon={<TagsOutlined />}
+              onClick={() => setTagModalOpen(true)}
+              style={{
+                height: 46,
+                borderRadius: 12,
+                background: "#5A1746",
+                borderColor: "#5A1746",
+                paddingInline: 24,
+                fontWeight: 600,
+              }}
+            >
+              Choose Tag
+            </Button>
+          </Space>
+        </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: 16,
-          flexWrap: "wrap",
-          marginBottom: 28,
-        }}
-      >
-        <Input
-          placeholder="Search by User, Phone, Case..."
-          prefix={<SearchOutlined />}
-          allowClear
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-            setCurrentPage(1);
-          }}
-          style={{
-            width: 380,
-            height: 46,
-            borderRadius: 12,
-          }}
+        <OrdersTable
+          orders={paginatedOrders}
+          onView={(order) => setViewOrder(order)}
+          onShare={(order) => setShareOrder(order)}
+          onAssign={(order) => setAssignOrder(order)}
         />
 
-        <Space wrap>
-          <Button
-            icon={<FilterOutlined />}
-            onClick={() => setFilterOpen(true)}
-            style={{
-              height: 46,
-              borderRadius: 12,
-              paddingInline: 24,
-              fontWeight: 600,
-            }}
-          >
-            Filter
-          </Button>
+        <div style={{ marginTop: 24 }}>
+          <PaginationBar
+            current={currentPage}
+            total={filteredOrders.length}
+            pageSize={PAGE_SIZE}
+            onChange={setCurrentPage}
+          />
+        </div>
+      </Card>
 
-          <Button
-            type="primary"
-            icon={<TagsOutlined />}
-            onClick={() => setTagModalOpen(true)}
-            style={{
-              height: 46,
-              borderRadius: 12,
-              background: "#5A1746",
-              borderColor: "#5A1746",
-              paddingInline: 24,
-              fontWeight: 600,
-            }}
-          >
-            Choose Tag
-          </Button>
-        </Space>
-      </div>
-
-      <OrdersTable
-        orders={paginatedOrders}
-        onView={(order) => setViewOrder(order)}
-        onShare={(order) => setShareOrder(order)}
-        onAssign={(order) => setAssignOrder(order)}
-      />
-
-      <div style={{ marginTop: 24 }}>
-        <PaginationBar
-          current={currentPage}
-          total={filteredOrders.length}
-          pageSize={PAGE_SIZE}
-          onChange={setCurrentPage}
-        />
-      </div>
-    </Card>
-          <FilterDrawer
+      <FilterDrawer
         open={filterOpen}
         onClose={() => setFilterOpen(false)}
         onApply={handleApplyFilters}
@@ -269,8 +265,7 @@ const Dashboard: React.FC = () => {
         order={shareOrder}
         onClose={() => setShareOrder(null)}
       />
-
-      <AssignClerkModal
+            <AssignClerkModal
         open={assignOrder !== null}
         onClose={() => setAssignOrder(null)}
         onAssign={(clerk: Clerk) => {
@@ -281,7 +276,7 @@ const Dashboard: React.FC = () => {
               order.id === assignOrder.id
                 ? {
                     ...order,
-                    clerk: clerk.name,
+                    clerk: clerk,
                   }
                 : order
             )
@@ -290,8 +285,7 @@ const Dashboard: React.FC = () => {
           setAssignOrder(null);
         }}
       />
-
-      <ViewOrderModal
+            <ViewOrderModal
         open={viewOrder !== null}
         order={viewOrder}
         onClose={() => setViewOrder(null)}

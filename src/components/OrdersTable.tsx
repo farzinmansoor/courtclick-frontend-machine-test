@@ -9,12 +9,7 @@ import {
   Avatar,
   Typography,
 } from "antd";
-import {
-  FilterOutlined,
-  EyeOutlined,
-  ShareAltOutlined,
-  EditOutlined,
-} from "@ant-design/icons";
+import { FilterOutlined } from "@ant-design/icons";
 import type { ColumnsType } from "antd/es/table";
 
 import { Order } from "@/types/types";
@@ -52,13 +47,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
       width: 60,
       align: "center",
       render: (id) => (
-        <Text
-          strong
-          style={{
-            color: "#444",
-            fontSize: 13,
-          }}
-        >
+        <Text strong style={{ color: "#444", fontSize: 13 }}>
           {id}
         </Text>
       ),
@@ -80,7 +69,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
               boxShadow: "0 4px 12px rgba(90,23,70,.25)",
             }}
           >
-            {record.userName?.charAt(0)}
+            {record.userName.charAt(0).toUpperCase()}
           </Avatar>
 
           <div style={{ lineHeight: 1.6 }}>
@@ -145,55 +134,11 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
         </div>
       ),
     },
-
-    {
-      title: (
-        <CheckboxFilterPopover
-          options={productFilterOptions}
-          onApply={(selected) => console.log(selected)}
-        >
-          <span
-            style={{
-              cursor: "pointer",
-              fontWeight: 700,
-            }}
-          >
-            PRODUCTS
-            <FilterOutlined style={{ marginLeft: 6 }} />
-          </span>
-        </CheckboxFilterPopover>
-      ),
-
-      key: "products",
-      width: 230,
-
-      render: (_, record) => (
-        <div>
-          <div
-            style={{
-              fontWeight: 700,
-              color: "#222",
-            }}
-          >
-            {record.productName}
-          </div>
-
-          <div
-            style={{
-              color: "#5A1746",
-              fontWeight: 700,
-              marginTop: 4,
-              fontSize: 13,
-            }}
-          >
-            ₹{record.amount.toLocaleString()}
-          </div>
-        </div>
-      ),
-    },    {
+        {
       title: "ORDER DATE",
       key: "orderDate",
       width: 170,
+
       render: (_, record) => (
         <div>
           <div
@@ -222,6 +167,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
       title: "STATUS",
       key: "status",
       width: 180,
+
       render: (_, record) => (
         <div>
           <StatusBadge status={record.status} />
@@ -286,8 +232,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
         </Space>
       ),
     },
-
-    {
+        {
       title: (
         <CheckboxFilterPopover
           options={dummyTags.map((tag) => ({
@@ -302,7 +247,8 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
               fontWeight: 700,
             }}
           >
-            TAGS <FilterOutlined style={{ marginLeft: 4 }} />
+            TAGS
+            <FilterOutlined style={{ marginLeft: 4 }} />
           </span>
         </CheckboxFilterPopover>
       ),
@@ -318,7 +264,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
             gap: 6,
           }}
         >
-          {record.tags?.map((tag) => (
+          {record.tags.map((tag) => (
             <AntTag
               key={tag.id}
               style={{
@@ -337,10 +283,12 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
         </div>
       ),
     },
-        {
+
+    {
       title: "CLERK",
       key: "clerk",
       width: 190,
+
       render: (_, record) =>
         record.clerk ? (
           <Space size={12}>
@@ -352,7 +300,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
                 fontSize: 15,
               }}
             >
-              {record.clerk.charAt(0)}
+              {record.clerk.name.charAt(0).toUpperCase()}
             </Avatar>
 
             <div>
@@ -363,7 +311,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
                   fontSize: 13,
                 }}
               >
-                {record.clerk}
+                {record.clerk.name}
               </div>
 
               <div
@@ -372,7 +320,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
                   color: "#999",
                 }}
               >
-                Assigned Clerk
+                {record.clerk.phone}
               </div>
             </div>
           </Space>
@@ -395,8 +343,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
         ),
     },
   ];
-
-  return (
+    return (
     <div
       style={{
         background: "#fff",
